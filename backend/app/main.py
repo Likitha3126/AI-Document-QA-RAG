@@ -92,7 +92,7 @@ def chat(request: ChatRequest):
     context = "\n\n".join(retrieved_chunks)
     
     history = sessions.get(request.session_id, [])
-
+    history = history[-5:]
     conversation = ""
 
     for msg in history:
